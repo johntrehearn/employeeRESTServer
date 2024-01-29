@@ -9,7 +9,8 @@ const CODES={
     REMOVE_OK:5,
     NOT_REMOVED:6,
     UPDATE_OK:7,
-    NOT_UPDATED:8
+    NOT_UPDATED:8,
+    KEY_DO_NOT_MATCH:9
 }
 
 const TYPES={
@@ -62,6 +63,11 @@ const MESSAGES = {
         message:`Resource with ${key} ${value} not updated`,
         code:CODES.NOT_UPDATED,
         type:TYPES.ERROR
+    }),
+    KEY_DO_NOT_MATCH: (key,keyInResource)=>({
+        message:`The given key ${key} of give resource does not `+ `match the given key ${keyInResource} in the resource object`,
+        code: CODES.KEY_DO_NOT_MATCH,
+        type: TYPES.ERROR
     })
 
     

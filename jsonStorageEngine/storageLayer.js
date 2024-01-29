@@ -8,7 +8,7 @@ function createStorageLayer(storageFolder, storageConfigFile){
 
     const storageConfig = path.join(storageFolder,storageConfigFile);
 
-    const{storageFile,adapterFile,primary_key} = require(storageConfig);
+    const{storageFile,adapterFile,primary_key, resource} = require(storageConfig);
 
     const {adapt} = require(path.join(storageFolder,adapterFile));
 
@@ -69,7 +69,8 @@ function createStorageLayer(storageFolder, storageConfigFile){
         updateStorage,
         removeFromStorage,
         getKeys,
-        primary_key
+        primary_key,
+        resource
     }
 
 } //end of createStorageLayer

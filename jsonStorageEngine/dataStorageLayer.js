@@ -13,7 +13,8 @@ function createDataStorage(storagePath, storageConfig){
         removeFromStorage,
         getKeys,
         getNextFreeKey,
-        primary_key
+        primary_key,
+        resource
     } = createStorageLayer(storagePath,storageConfig);
 
     //Datastorage class
@@ -42,6 +43,10 @@ function createDataStorage(storagePath, storageConfig){
 
         getAll(){
             return getAllFromStorage();
+        }
+
+        get RESOURCE(){
+            return resource;
         }
 
         get(value, key=primary_key){
